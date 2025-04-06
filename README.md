@@ -26,7 +26,7 @@ To install, run ```sudo make (clean) install```.
 * input parsing;
 * better error handling;
 * refactor everything 100 times over;
-* simple configuration capabilities (via congig.h or something along those lines);
+* simple configuration capabilities (via ```config.h``` or something along the lines);
 * procedural file inclusion;
 * EOL escaping;
 * stdout piping;
