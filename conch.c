@@ -63,13 +63,13 @@ int CONCH_exec(void) {
 
 int CONCH_clean(void) {
     free(command);
-    if (remove("/tmp/conchsrc.c")
-    && remove("/tmp/conchbin")) {
-        return 0;
+    if (remove("/tmp/conchsrc.c") == 0) {
+        if (remove("/tmp/conchbin") == 0) {
+            return 0;
+        }
     }
     
     return 1;
-
 }
 
 int main(void) {

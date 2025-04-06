@@ -1,8 +1,8 @@
-[WIP] A very simple C interpreter for Linux.
+**[SUPER WIP]** A very simple C interpreter for Linux.
 
 ## How it works
 
-Upon receiving an input from the REPL (for example, ```printf("hello world");```), conch will create a file called ```conchsrc.c``` in the ```/tmp/``` directory with such contents (function ```CONCH_create_src```):
+Upon receiving an input from the REPL (for example, ```printf("hello world");```), conch will create a file called ```conchsrc.c``` in the ```/tmp/``` directory with these contents (function ```CONCH_create_src```):
 
 ```c
 #include <stdio.h>
@@ -16,13 +16,14 @@ void main(void) {
 
 It will then fork, with the child executing ```gcc -o /tmp/conchbin /tmp/conchsrc.c``` and exiting (function ```CONCH_compile```). It will then fork the second time, this time in order for the child to finally run the compiled binary (function ```CONCH_exec```). After that, conch will delete the temporary files and free the input pointer (function ```CONCH_clean```) and repeat the loop.  
 
-## Building and Installing
+## Building and installing
 
-To build, run ```make (clean all)```.
+To build, run ```make (clean all)```.  
 To install, run ```sudo make (clean) install```.
 
 ## TODO (in order of urgency)
 
+* a pretty logo;
 * input parsing;
 * better error handling;
 * refactor everything 100 times over;
@@ -33,4 +34,4 @@ To install, run ```sudo make (clean) install```.
 
 ## Licensing
 
-See ```LICENSE.md```.
+This work is licensed under CC BY 4.0. See ```LICENSE.md``` for more details.
