@@ -1,37 +1,40 @@
-**[SUPER WIP]** A very simple C interpreter for Linux.
+сonch (pronounced *KAHN-tch*) is a very simple C interpreter for Linux.
+
+**NOTE:** This project is in very early alpha, being developed for fun by an amateur and _absolutely_ not ready for any kind of "production".
 
 ## How it works
 
-Upon receiving an input from the REPL (for example, ```printf("hello world");```), conch will create a file called ```conchsrc.c``` in the ```/tmp/``` directory with these contents (function ```CONCH_create_src```):
+Having received an input (for example, ```printf("hello world");```), conch creates a file called ```conchsrc.c``` in the ```/tmp/``` directory with the following contents (function ```CONCH_create_src```):
 
 ```c
 #include <stdio.h>
 #include <unistd.h>
 
 void main(void) {
-    printf("hello world");
+    printf("hello world"); // <- the input
     return 0;
 }
 ```
 
-It will then fork, with the child executing ```gcc -o /tmp/conchbin /tmp/conchsrc.c``` and exiting (function ```CONCH_compile```). It will then fork the second time, this time in order for the child to finally run the compiled binary (function ```CONCH_exec```). After that, conch will delete the temporary files and free the input pointer (function ```CONCH_clean```) and repeat the loop.  
+It then forks, with the child executing ```gcc -o /tmp/conchbin /tmp/conchsrc.c``` and exiting (function ```CONCH_compile```), after which it forks again, this time in order for the child to run the compiled binary (function ```CONCH_exec```). In finalizing steps, conch deletes the temporary files, frees the input pointer (function ```CONCH_clean```) and repeats the REPL loop.  
 
 ## Building and installing
 
 To build, run ```make (clean all)```.  
 To install, run ```sudo make (clean) install```.
 
-## TODO (in order of urgency)
+## TODO (in rough order of urgency)
 
-* a pretty logo;
-* input parsing;
-* better error handling;
-* refactor everything 100 times over;
-* simple configuration capabilities (via ```config.h``` or something along the lines);
-* procedural file inclusion;
-* EOL escaping;
-* stdout piping;
+* draw a pretty logo;
+* add input parsing;
+* add better error handling;
+* refactor everything;
+* add simple configuration capabilities (via ```config.h``` or something along the lines);
+* add procedural file inclusion;
+* add EOL escaping;
+* add stdout piping;
+* [...]
 
 ## Licensing
 
-This work is licensed under CC BY 4.0. See ```LICENSE.md``` for more details.
+This work is licensed under the GNU General Public License v3.0; see ```LICENSE.md``` for more details.
