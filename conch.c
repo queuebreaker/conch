@@ -29,7 +29,7 @@ int CONCH_compile(void) {
 
     if (cpid == 0) {
         char* args[] = {"/usr/bin/gcc", "-o", "/tmp/conchbin", "/tmp/conchsrc.c", NULL};
-        int ret = execv(args[0], args);
+        execv(args[0], args);
     } else if (cpid < 0) {
         return 1;
     }
@@ -72,7 +72,7 @@ int CONCH_clean(void) {
 
 }
 
-int main(int argc, char** argv) {
+int main(void) {
 
     using_history();
 
@@ -113,7 +113,6 @@ int main(int argc, char** argv) {
             continue;
         }
     }
-    
+
     clear_history();
 }
-// }
