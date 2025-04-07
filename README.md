@@ -1,4 +1,4 @@
-сonch (pronounced *KAHN-tch*) is a very simple C interpreter for Linux.
+сonch (pronounced *KAHN-tch*) is a very simple C REPL for Linux.
 
 **NOTE:** This project is in very early alpha, being developed for fun by an amateur and _absolutely_ not ready for any kind of "production".
 
