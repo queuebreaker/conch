@@ -1,4 +1,4 @@
-# conch - c interpreter/shell for linux
+# conch - a simple C REPL for Linux
 
 CC := gcc
 CFLAGS := -Wall -Wextra -g
