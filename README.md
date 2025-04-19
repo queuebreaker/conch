@@ -30,8 +30,6 @@ To install, run ```sudo make (clean) install```.
 * add better error handling;
 * refactor everything;
 * add simple configuration capabilities (via ```config.h``` or something along the lines);
-* add procedural file inclusion;
-* add EOL escaping;
 * add stdout piping;
 * [...]
 

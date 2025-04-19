@@ -3,7 +3,7 @@
 CC := gcc
 CFLAGS := -Wall -Wextra -g
 CLIBS := -lreadline
-SRC := conch.c
+SRC := main.c conch.c
 OBJ := ${SRC:.c=.o}
 BIN := conch
 
