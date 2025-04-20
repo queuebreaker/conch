@@ -33,7 +33,7 @@ conch comes with a ```config.h``` file which allows for some rudimentary configu
 
 As of 20.04.2025, conch is on version 0.3 (alpha).
 
-# Changelog
+### Changelog
 
 * added ability to configure some aspects of conch via ```config.h```;
 * added EOL escaping via backslash;
