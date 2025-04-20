@@ -1,9 +1,9 @@
-# conch - a simple C REPL for Linux
+# conch - a simple C REPL for GNU/Linux
 
 CC := gcc
 CFLAGS := -Wall -Wextra -g
 CLIBS := -lreadline
-SRC := main.c conch.c
+SRC := conch.c
 OBJ := ${SRC:.c=.o}
 BIN := conch
 

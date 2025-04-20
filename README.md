@@ -1,6 +1,6 @@
-сonch (pronounced *KAHN-tch*) is a very simple C REPL for Linux.
+сonch (pronounced *KAHN-tch* and stylized in lowercase) is a very simple C REPL for Linux.
 
-**NOTE:** This project is in very early alpha, being developed for fun by an amateur and _absolutely_ not ready for any kind of "production".
+**NOTE:** This project is in very early alpha, being developed for fun by an amateur and _absolutely_ not ready for any kind of production.
 
 ## How it works
 
@@ -11,7 +11,7 @@ Having received an input (for example, ```printf("hello world");```), conch crea
 #include <unistd.h>
 
 void main(void) {
-    printf("hello world"); // <- the input
+    printf("hello world"); /* <- the input */
     return 0;
 }
 ```
@@ -22,15 +22,29 @@ It then forks, with the child executing ```gcc -o /tmp/conchbin /tmp/conchsrc.c`
 
 To build, run ```make (clean all)```.  
 To install, run ```sudo make (clean) install```.
+To clean, run ```make clean```.
+To uninstall, run ```sudo make (clean) uninstall```.
+
+## Configuration
+
+conch comes with a ```config.h``` file which allows for some rudimentary configuration.
+
+## Version
+
+As of 20.04.2025, conch is on version 0.3 (alpha).
+
+# Changelog
+
+* added ability to configure some aspects of conch via ```config.h```;
+* added EOL escaping via backslash;
 
 ## TODO (in rough order of urgency)
 
 * draw a pretty logo;
-* add input parsing;
+* add actual input parsing;
+* add stdout piping;
 * add better error handling;
 * refactor everything;
-* add simple configuration capabilities (via ```config.h``` or something along the lines);
-* add stdout piping;
 * [...]
 
 ## Licensing
